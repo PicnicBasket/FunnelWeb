@@ -23,6 +23,11 @@ namespace FunnelWeb.Providers
                 .WithMetadata<IProviderMetadata>(c => c.For(m => m.Name, "Sql"));
 
             builder
+                .RegisterType<MySqlDatabaseProvider>()
+                .Named<IDatabaseProvider>("mysql")
+                .WithMetadata<IProviderMetadata>(c => c.For(m => m.Name, "MySql"));
+
+            builder
                 .RegisterType<SqlCeDatabaseProvider>()
                 .Named<IDatabaseProvider>("sqlce")
                 .WithMetadata<IProviderMetadata>(c => c.For(m => m.Name, "SqlCe"));

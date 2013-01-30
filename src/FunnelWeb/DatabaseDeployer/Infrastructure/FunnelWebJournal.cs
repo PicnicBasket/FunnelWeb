@@ -57,8 +57,10 @@ namespace FunnelWeb.DatabaseDeployer.Infrastructure
 
             var scripts = new List<string>();
 
+            // TODO: work out how to do this for MySql and SQL Server
             RunCommand(
-                string.Format("select [ScriptName] from {0} where [SourceIdentifier] = @sourceIdentifier order by [ScriptName]", schemaTableName),
+                //string.Format("select [ScriptName] from {0} where [SourceIdentifier] = @sourceIdentifier order by [ScriptName]", schemaTableName),
+                string.Format("select ScriptName from {0} where SourceIdentifier = @sourceIdentifier order by ScriptName", schemaTableName),
                 cmd =>
                 {
                     var parameter = cmd.CreateParameter();
@@ -115,11 +117,12 @@ namespace FunnelWeb.DatabaseDeployer.Infrastructure
                 RunCommand(
                     string.Format(
                     @"create table {0} (
-	                    [SchemaVersionId] int identity(1,1) not null constraint PK_SchemaVersions_Id primary key nonclustered ,
-	                    [VersionNumber] int null,
-                        [SourceIdentifier] nvarchar(255) not null,
-                        [ScriptName] nvarchar(255) not null, 
-	                    [Applied] datetime not null
+	                    SchemaVersionId int AUTO_INCREMENT not null,
+	                    VersionNumber int null,
+                        SourceIdentifier nvarchar(255) not null,
+                        ScriptName nvarchar(255) not null, 
+	                    Applied datetime not null,
+                         unique (SchemaVersionID)
                     )", schemaTableName),
                     cmd => cmd.ExecuteNonQuery());
 
