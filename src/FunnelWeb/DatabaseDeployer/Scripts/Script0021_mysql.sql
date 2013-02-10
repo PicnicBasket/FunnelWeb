@@ -2,7 +2,7 @@
 
 alter table $schema$.Entry add
 	RevisionNumber int NULL,
-	Body VARCHAR(max) NULL
+	Body TEXT NULL
 
 
 update $schema$.Entry set 
@@ -15,7 +15,7 @@ alter table $schema$.Entry alter column LatestRevisionId int not null
 
 alter table $schema$.Entry alter column RevisionNumber int not null
 
-alter table $schema$.Entry alter column Body VARCHAR(max) not null
+alter table $schema$.Entry alter column Body TEXT not null
 
 
 alter table $schema$.Revision

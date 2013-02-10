@@ -1,6 +1,6 @@
 ﻿create table $schema$.Pingback
 (
-    Id int AUTO_NUMBER not null,
+    Id int AUTO_INCREMENT not null,
 	EntryId int not null,
 	TargetUri VARCHAR(255) not null,
 	TargetTitle VARCHAR(255) not null,

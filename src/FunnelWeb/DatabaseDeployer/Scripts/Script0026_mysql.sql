@@ -2,8 +2,8 @@
 if not exists (select * from sys.objects where object_id = OBJECT_ID(N'$schema$.User') AND type in (N'U'))
     create table $schema$.User (
 		Id int identity not null constraint PK_User_Id primary key,
-		Name VARCHAR(50) not null,
-		Username VARCHAR(50) not null,
+		`Name` VARCHAR(50) not null,
+		User`Name` VARCHAR(50) not null,
 		Password VARCHAR(50) not null,
 		Email VARCHAR(50) not null
 	)
@@ -12,7 +12,7 @@ if not exists (select * from sys.objects where object_id = OBJECT_ID(N'$schema$.
 if not exists (select * from sys.objects where object_id = OBJECT_ID(N'$schema$.Role') AND type in (N'U'))
     create table $schema$.Role (
 		Id int identity not null constraint PK_Roles_Id primary key,
-		Name VARCHAR(50) not null
+		`Name` VARCHAR(50) not null
 	)
 
 

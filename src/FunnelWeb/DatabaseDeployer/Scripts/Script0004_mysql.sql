@@ -2,11 +2,11 @@
 
 create table $schema$.Setting
 (
-    Id int AUTO_NUMBER not null,
-	Name VARCHAR(50) not null,
-	Description VARCHAR(max) not null,
-	DisplayName VARCHAR(200) not null,
-	Value VARCHAR(max) not null,
+    Id int AUTO_INCREMENT not null,
+	`Name` VARCHAR(50) not null,
+	Description TEXT not null,
+	Display`Name` VARCHAR(200) not null,
+	Value TEXT not null,
      Unique(Id)
 );
 

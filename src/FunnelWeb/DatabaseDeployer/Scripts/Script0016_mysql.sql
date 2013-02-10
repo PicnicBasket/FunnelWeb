@@ -2,14 +2,14 @@
 
 create table $schema$.Tag
 (
-    Id int AUTO_NUMBER not null constraint PK_Tag_Id primary key,
-    Name VARCHAR(50) not null
+    Id int AUTO_INCREMENT not null constraint PK_Tag_Id primary key,
+    `Name` VARCHAR(50) not null
 );
 
 
 create table $schema$.TagItem
 (
-    Id int AUTO_NUMBER not null,
+    Id int AUTO_INCREMENT not null,
     TagId int not null constraint FK_TagItem_TagId foreign key references $schema$.Tag(Id),
     EntryId int not null constraint FK_TagItem_EntryId foreign key references $schema$.Entry(Id),
       unique(Id)
@@ -76,7 +76,7 @@ insert into $schema$.TagItem (TagId, EntryId)
 
 -- I normally take care to name constraints, but kept forgetting to do it for defaults, damnit!
 
-declare @defaultConstraintName VARCHAR(100)
+declare @defaultConstraint`Name` VARCHAR(100)
 select @defaultConstraintName = name
     from sys.default_constraints 
     where name like 'DF_%MetaKeywo%'

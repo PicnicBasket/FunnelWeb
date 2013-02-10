@@ -1,4 +1,4 @@
-﻿declare @defaultConstraintName VARCHAR(100)
+﻿declare @defaultConstraint`Name` VARCHAR(100)
 declare @str VARCHAR(200)
 
 select @defaultConstraintName = name from sys.default_constraints where name like 'DF__Entry__IsDiscuss%'
@@ -23,10 +23,10 @@ alter table $schema$.Entry
 
 create table $schema$.Tmp_Entry
 (
-	Id int not null AUTO_NUMBER,
-	Name VARCHAR(200) not null,
+	Id int not null AUTO_INCREMENT,
+	`Name` VARCHAR(200) not null,
 	Title VARCHAR(200) not null,
-	Summary VARCHAR(MAX) not null,
+	Summary TEXT not null,
 	Published datetime not null,
 	LatestRevisionId int not null,
 	IsDiscussionEnabled bit not null,
@@ -36,7 +36,7 @@ create table $schema$.Tmp_Entry
 	Status VARCHAR(20) not null,
 	PageTemplate VARCHAR(20) NULL,
 	RevisionNumber int not null,
-	Body VARCHAR(MAX) not null
+	Body TEXT not null
 )
 
 

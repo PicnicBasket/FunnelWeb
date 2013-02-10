@@ -18,7 +18,7 @@ namespace FunnelWeb.Providers.Database
     {
         public string DefaultConnectionString
         {
-            get { return @"database=FunnelWeb;server=.;username=FunnelWebDbUser;password=FD28DE2EB96E41D79EC34B336F"; }
+            get { return @"database=FunnelWeb;server=localhost;username=FunnelWebDbUser;password=FD28DE2EB96E41D79EC34B336F;"; }
         }
 
         public bool SupportSchema

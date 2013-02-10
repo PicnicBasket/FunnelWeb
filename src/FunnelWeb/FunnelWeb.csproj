@@ -390,6 +390,39 @@
   <ItemGroup>
     <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0001_mysql.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0002_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0003_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0004_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0005_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0006_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0007_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0008_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0009_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0010_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0011_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0012_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0013_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0014_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0015_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0016_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0017_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0018_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0019_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0020_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0021_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0022_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0023_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0024_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0025_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0026_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0027_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0028_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0029_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0030_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0031_mysql.sql" />
+    <Content Include="DatabaseDeployer\Scripts\Script0032_mysql.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <PropertyGroup>

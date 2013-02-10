@@ -3,9 +3,9 @@
 
 create table $schema$.Tmp_Comment
 (
-	Id int NOT NULL AUTO_NUMBER,
-	Body VARCHAR(MAX) NOT NULL,
-	AuthorName VARCHAR(100) NOT NULL,
+	Id int NOT NULL AUTO_INCREMENT,
+	Body TEXT NOT NULL,
+	Author`Name` VARCHAR(100) NOT NULL,
 	AuthorEmail VARCHAR(100) NOT NULL,
 	AuthorUrl VARCHAR(100) NOT NULL,
 	AuthorIp VARCHAR(39) NULL,

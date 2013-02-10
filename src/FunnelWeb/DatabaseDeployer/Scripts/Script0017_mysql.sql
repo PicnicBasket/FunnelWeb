@@ -2,11 +2,11 @@
 create table $schema$.TaskState
 (
 	Id int identity not null,
-	TaskName VARCHAR(50) not null,
-	Arguments VARCHAR(max) not null,
+	`TaskName` VARCHAR(50) not null,
+	Arguments TEXT not null,
 	ProgressEstimate int,
 	Status VARCHAR(30),
-	OutputLog VARCHAR(max) not null,
+	OutputLog TEXT not null,
 	Started datetime not null,
 	Updated datetime not null,
       unique(Id)

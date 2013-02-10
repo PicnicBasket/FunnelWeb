@@ -18,5 +18,5 @@ alter table $schema$.Comment
 
 -- 50 was a nice size, but when we import from other blog engines they may have used large URL's
 alter table $schema$.Entry 
-	alter column Name VARCHAR(100);
+	alter column `Name` VARCHAR(100);
 
