@@ -1,7 +1,8 @@
-﻿declare @hasFullText int
-select @hasFullText = convert(int, SERVERPROPERTY('IsFullTextInstalled'))
+﻿declare hasFullText int;
 
-if (@hasFullText = 1)
+select hasFullText = convert(int, SERVERPROPERTY('IsFullTextInstalled'));
+
+if (hasFullText = 1)
 begin
 begin try
 	exec sp_fulltext_catalog 'FTCatalog', 'create' 

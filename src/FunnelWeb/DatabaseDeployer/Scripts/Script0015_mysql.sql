@@ -1,5 +1,5 @@
 ﻿alter table $schema$.Revision
-    add Format VARCHAR(20) not null default('Markdown');
+    add `Format` VARCHAR(20) not null default('Markdown');
 
 
 alter table $schema$.Entry

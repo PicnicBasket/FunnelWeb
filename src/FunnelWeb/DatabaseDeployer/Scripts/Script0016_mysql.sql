@@ -2,16 +2,16 @@
 
 create table $schema$.Tag
 (
-    Id int AUTO_INCREMENT not null constraint PK_Tag_Id primary key,
+    `Id` int AUTO_INCREMENT not null constraint PK_Tag_Id primary key,
     `Name` VARCHAR(50) not null
 );
 
 
 create table $schema$.TagItem
 (
-    Id int AUTO_INCREMENT not null,
-    TagId int not null constraint FK_TagItem_TagId foreign key references $schema$.Tag(Id),
-    EntryId int not null constraint FK_TagItem_EntryId foreign key references $schema$.Entry(Id),
+    `Id` int AUTO_INCREMENT not null,
+    `TagId` int not null constraint FK_TagItem_TagId foreign key references $schema$.Tag(Id),
+    `EntryId` int not null constraint FK_TagItem_EntryId foreign key references $schema$.Entry(Id),
       unique(Id)
 );
 

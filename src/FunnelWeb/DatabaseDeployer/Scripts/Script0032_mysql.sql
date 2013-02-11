@@ -1,8 +1,8 @@
 insert into $schema$.Setting(
-	Name,
-	DisplayName,
-	Value,
-	Description
+	`Name`,
+	`DisplayName`,
+	`Value`,
+	`Description`
 )
 values (
 	'disqus-shortname',

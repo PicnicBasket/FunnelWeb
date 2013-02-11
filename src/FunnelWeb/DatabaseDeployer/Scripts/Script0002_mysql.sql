@@ -35,7 +35,7 @@ create table $schema$.Revision
 	Reason VARCHAR(1000) not null,
 	Revised datetime not null,
 	Tags VARCHAR(1000) not null,
-	Status int not null,
+	`Status` int not null,
 	IsVisible bit not null,
 	RevisionNumber int not null,
      Unique(Id)
@@ -62,7 +62,7 @@ create table $schema$.`Comment`
 	AuthorUrl VARCHAR(100) not null,
 	Posted datetime not null,
 	EntryId int not null,
-	Status int not null,
+	`Status` int not null,
      Unique(Id)
 );
 
@@ -71,7 +71,7 @@ alter table $schema$.Revision add constraint FK_Revision_Entry foreign key(Entry
 	references $schema$.Entry (Id);
 
 
-alter table $schema$.Revision add constraint DF_Revision_RevisionNumber default ((0)) FOR RevisionNumber;
+alter table $schema$.Revision ALTER COLUMN RevisionNumber SET DEFAULT 0;
 
 
 alter table $schema$.FeedItem add constraint FK_FeedItem_Entry foreign key(ItemId)
@@ -84,5 +84,4 @@ alter table $schema$.FeedItem add constraint FK_FeedItem_Feed foreign key(FeedId
 
 alter table $schema$.Comment add constraint FK_Comment_Comment foreign key(EntryId)
 	references $schema$.Entry (Id);
-
 

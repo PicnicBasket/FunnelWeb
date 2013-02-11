@@ -23,20 +23,20 @@ alter table $schema$.Entry
 
 create table $schema$.Tmp_Entry
 (
-	Id int not null AUTO_INCREMENT,
+	`Id `int not null AUTO_INCREMENT,
 	`Name` VARCHAR(200) not null,
-	Title VARCHAR(200) not null,
-	Summary TEXT not null,
-	Published datetime not null,
-	LatestRevisionId int not null,
-	IsDiscussionEnabled bit not null,
-	MetaDescription VARCHAR(500) not null,
-	MetaTitle VARCHAR(255) not null,
-	HideChrome bit not null,
-	Status VARCHAR(20) not null,
-	PageTemplate VARCHAR(20) NULL,
-	RevisionNumber int not null,
-	Body TEXT not null
+	`Title` VARCHAR(200) not null,
+	`Summary` TEXT not null,
+	`Published` datetime not null,
+	`LatestRevisionId` int not null,
+	`IsDiscussionEnabled` bit not null,
+	`MetaDescription` VARCHAR(500) not null,
+	`MetaTitle` VARCHAR(255) not null,
+	`HideChrome` bit not null,
+	`Status` VARCHAR(20) not null,
+	`PageTemplate` VARCHAR(20) NULL,
+	`RevisionNumber` int not null,
+	`Body` TEXT not null
 )
 
 

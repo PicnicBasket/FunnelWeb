@@ -421,7 +421,7 @@
     <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0029_mysql.sql" />
     <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0030_mysql.sql" />
     <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0031_mysql.sql" />
-    <Content Include="DatabaseDeployer\Scripts\Script0032_mysql.sql" />
+    <EmbeddedResource Include="DatabaseDeployer\Scripts\Script0032_mysql.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
