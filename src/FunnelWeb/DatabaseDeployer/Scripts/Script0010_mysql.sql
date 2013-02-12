@@ -1,4 +1,4 @@
-﻿declare @hasFullText bit
+﻿/*declare @hasFullText bit
 declare @hasFullTextIndex bit
 select @hasFullText = convert(int, SERVERPROPERTY('IsFullTextInstalled'))
 SELECT @hasFullTextIndex = OBJECTPROPERTY(OBJECT_ID('$schema$.Entry'), 'TableHasActiveFulltextIndex')
@@ -16,4 +16,4 @@ begin catch
 --Full text not installed 
 PRINT 'Full text catalog not installed'
 end catch
-end
+end*/

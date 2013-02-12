@@ -1,4 +1,4 @@
-﻿declare hasFullText int;
+﻿/*declare hasFullText int;
 
 select hasFullText = convert(int, SERVERPROPERTY('IsFullTextInstalled'));
 
@@ -21,4 +21,4 @@ begin catch
 --Full text not installed 
 PRINT 'Full text catalog not installed'
 end catch
-end
+end*/

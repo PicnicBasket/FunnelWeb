@@ -1,7 +1,7 @@
 ﻿alter table $schema$.Revision
-    add `Format` VARCHAR(20) not null default('Markdown');
-
+    add COLUMN `Format` VARCHAR(20) not null DEFAULT 'Markdown';
 
 alter table $schema$.Entry
-    add HideChrome bit not null default(0);
+    add COLUMN HideChrome bit not null DEFAULT 0;
+
 

@@ -30,11 +30,11 @@ where (Id in (select fi.ItemId from $schema$.FeedItem fi))
 
 create function $schema$.SplitTags
 (
-    @input VARCHAR(500)
+    input VARCHAR(500)
 )
 returns @tags table (Tag VARCHAR(500) )
 
-    if @input is null return
+    if input is null return
     
     declare @iStart int, @iPos int
     if substring( @input, 1, 1 ) = ','
@@ -64,7 +64,7 @@ end;
 -- Discover a list of all tags from meta keywords
 insert into $schema$.Tag (Name)
     select distinct(tags.Tag) as Name from $schema$.Entry e
-    cross apply $schema$.SplitTags(e.MetaKeywords) as tags
+    cross apply $schema$.SplitTags(e.MetaKeywords) as tags;
 
 -- Associate new tags with posts
 insert into $schema$.TagItem (TagId, EntryId)
@@ -72,18 +72,19 @@ insert into $schema$.TagItem (TagId, EntryId)
         (select Id from $schema$.Tag where Name = tags.Tag) as TagId, 
 		e.Id as PostId
     from $schema$.Entry e
-    cross apply $schema$.SplitTags(e.MetaKeywords) as tags
+    cross apply $schema$.SplitTags(e.MetaKeywords) as tags;
 
 -- I normally take care to name constraints, but kept forgetting to do it for defaults, damnit!
 
-declare @defaultConstraint`Name` VARCHAR(100)
-select @defaultConstraintName = name
-    from sys.default_constraints 
-    where name like 'DF_%MetaKeywo%'
+declare @defaultConstraint`Name` VARCHAR(100);
 
-declare @str VARCHAR(200)
-set @str = 'alter table $schema$.Entry drop constraint ' + @defaultConstraintName
-exec (@str)
+SELECT @defaultConstraintName = `COLUMN_NAME`
+    FROM `information_schema`.`KEY_COLUMN_USAGE` 
+    WHERE `COLUMN_NAME` LIKE 'DF_%MetaKeywo%';
+
+declare @str VARCHAR(200);
+set @str = 'alter table $schema$.Entry drop constraint ' + @defaultConstraintName;
+exec (@str);
 
 if (1 = convert(int, SERVERPROPERTY('IsFullTextInstalled'))) 
 begin
