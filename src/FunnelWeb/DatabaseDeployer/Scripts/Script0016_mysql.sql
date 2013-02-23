@@ -32,14 +32,19 @@ create function $schema$.SplitTags
 (
     input VARCHAR(500)
 )
-returns @tags table (Tag VARCHAR(500) )
+returns table
+    -- no table variables in MySql
+    CREATE TEMPORARY TABLE temp_tags Tag VARCHAR(500);
 
-    if input is null return
+    if input is null return;
     
-    declare @iStart int, @iPos int
+    declare @iStart int;
+    declare @iPos int;
+
     if substring( @input, 1, 1 ) = ','
-        set @iStart = 2
-    else set @iStart = 1
+        set @iStart = 2;
+    else 
+        set @iStart = 1;
       
     while 1=1
     begin
@@ -49,14 +54,15 @@ returns @tags table (Tag VARCHAR(500) )
             
         if (@iPos - @iStart > 0) 
             
-            insert into @tags values (replace(lower(ltrim(rtrim(substring( @input, @iStart, @iPos-@iStart )))), ' ', '-'))
+            insert into temp_tags values (replace(lower(ltrim(rtrim(substring( @input, @iStart, @iPos-@iStart )))), ' ', '-'));
             
-        set @iStart = @iPos+1
+        set @iStart = @iPos+1;
         
         if @iStart > len( @input ) 
-            break
+            break;
     end
-    return
+
+    select * from temp_tags;
 end;
 
 
