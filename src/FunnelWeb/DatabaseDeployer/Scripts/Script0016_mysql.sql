@@ -82,7 +82,7 @@ insert into $schema$.TagItem (TagId, EntryId)
 
 -- I normally take care to name constraints, but kept forgetting to do it for defaults, damnit!
 
-declare @defaultConstraint`Name` VARCHAR(100);
+declare `defaultConstraintName` VARCHAR(100);
 
 SELECT @defaultConstraintName = `COLUMN_NAME`
     FROM `information_schema`.`KEY_COLUMN_USAGE` 
